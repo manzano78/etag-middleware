@@ -1,4 +1,4 @@
-import { createHash } from 'node:crypto';
+import * as Crypto from 'node:crypto';
 
 const supportedMimeTypes = [
   'application/json',
@@ -41,7 +41,7 @@ function isContentTypeSupported(
 
 function hashArrayBuffer(arrayBuffer: ArrayBuffer): string {
   const buffer = Buffer.from(arrayBuffer);
-  const hash = createHash('sha256');
+  const hash = Crypto.createHash('sha256');
 
   hash.update(buffer);
 

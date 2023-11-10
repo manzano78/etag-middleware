@@ -2,7 +2,7 @@
   "name": "@manzano/etag-middleware",
   "module": "index.ts",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {

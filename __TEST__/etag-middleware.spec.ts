@@ -14,7 +14,7 @@ describe('Etag header middleware', () => {
       status: 200,
       headers: {
         'Content-Type': 'text/plain',
-      }
+      },
     });
     const next = async () => baseResponse;
     const newResponse = await etagMiddleware({ request, next });
@@ -29,7 +29,7 @@ describe('Etag header middleware', () => {
       status: 200,
       headers: {
         'Content-Type': 'text/css',
-      }
+      },
     });
     const next = async () => baseResponse;
     const newResponse = await etagMiddleware({ request, next });
@@ -47,7 +47,7 @@ describe('Etag header middleware', () => {
       status: 200,
       headers: {
         'Content-Type': 'text/plain',
-      }
+      },
     });
     const next = async () => baseResponse;
     const newResponse = await etagMiddleware({ request, next });
@@ -63,13 +63,13 @@ describe('Etag header middleware', () => {
     const request = new Request(testUrl, {
       headers: {
         'If-None-Match': dataHash,
-      }
+      },
     });
     const baseResponse = new Response(data, {
       status: 200,
       headers: {
         'Content-Type': 'text/plain',
-      }
+      },
     });
     const next = async () => baseResponse;
     const newResponse = await etagMiddleware({ request, next });

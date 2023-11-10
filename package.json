@@ -2,9 +2,15 @@
   "name": "etag-middleware",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "deploy": "npm publish --access public",
+    "prettier:check": "npx prettier . --check",
+    "prettier:write": "npx prettier . --write"
+  },
   "devDependencies": {
     "@types/node": "^20.9.0",
     "bun-types": "1.0.11",
+    "prettier": "^3.0.3",
     "typescript": "5.2.2"
   }
 }

@@ -6,24 +6,29 @@ const supportedMimeTypes = [
   'text/css',
   'text/csv',
   'text/plain',
-  'text/javascript'
+  'text/javascript',
   // Probably add more values later, on demand.
 ] as const satisfies ReadonlyArray<string>;
 
 // For performance considerations (billions requests can be handled!), we'll use a Set.
 const supportedMimeTypesSet = new Set(supportedMimeTypes);
 
-type SupportedMimeType = typeof supportedMimeTypes[number];
-export type EtagMiddleware = (params: { request: Request; next: () => Promise<Response> }) => Promise<void | Response>;
+type SupportedMimeType = (typeof supportedMimeTypes)[number];
+export type EtagMiddleware = (params: {
+  request: Request;
+  next: () => Promise<Response>;
+}) => Promise<void | Response>;
 export interface EtagMiddlewareOptions {
-  mimeTypes: SupportedMimeType[]
+  mimeTypes: SupportedMimeType[];
 }
 
 function isSupportedMimeType(mimeType: string): mimeType is SupportedMimeType {
   return supportedMimeTypesSet.has(mimeType as SupportedMimeType);
 }
 
-function isContentTypeSupported(contentTypeResponseHeader: string | null): boolean {
+function isContentTypeSupported(
+  contentTypeResponseHeader: string | null,
+): boolean {
   if (!contentTypeResponseHeader) {
     return false;
   }
@@ -70,5 +75,5 @@ export function etag({ mimeTypes }: EtagMiddlewareOptions): EtagMiddleware {
 
     // add the response body hash as etag header
     response.headers.set('ETag', responseBodyHash);
-  }
+  };
 }

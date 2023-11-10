@@ -1,4 +1,5 @@
 # etag-middleware
+
 ETag header middleware based on standard [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request]) and [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response).
 
 It will be able to be used in future Remix middlewares ([RFC](https://github.com/remix-run/remix/discussions/7642)).
@@ -25,10 +26,7 @@ import { etag } from '@manzano/etag-middleware';
 export const middlewares = [
   etag({
     // mime types to process (required)
-    mimetypes: [
-      'application/json',
-      'text/html',
-    ]
+    mimetypes: ['application/json', 'text/html'],
   }),
   // ... other middlewares
 ];

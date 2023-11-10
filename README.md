@@ -1,6 +1,11 @@
 # etag-middleware
 
-ETag header middleware based on standard [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request]) and [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response). It will be able to be used in future Remix middlewares ([RFC](https://github.com/remix-run/remix/discussions/7642)).
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/manzano78/etag-middleware/ci.yml?style=flat-square)
+[![npm version](https://img.shields.io/npm/v/@manzano/etag-middleware.svg?style=flat-square)](https://www.npmjs.com/package/@manzano/etag-middleware)
+
+ETag header middleware based on standard [Request](https://developer.mozilla.org/en-US/docs/Web/API/Request]) and [Response](https://developer.mozilla.org/en-US/docs/Web/API/Response). 
+
+It will be able to be used in future Remix middlewares ([RFC](https://github.com/remix-run/remix/discussions/7642)).
 
 **Runtimes compatibility:** Node, Deno & Bun 🚀
 

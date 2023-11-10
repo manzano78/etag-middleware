@@ -1,4 +1,4 @@
-import Crypto from 'node:crypto';
+import * as Crypto from 'node:crypto';
 
 export function hash(arrayBuffer: ArrayBuffer): string {
   const buffer = Buffer.from(arrayBuffer);

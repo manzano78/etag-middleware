@@ -1,4 +1,4 @@
-import { hash } from './hash.ts';
+import { hash } from './hash';
 
 export type SupportedMimeType =
   | 'application/json'

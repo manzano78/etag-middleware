@@ -62,10 +62,6 @@ export function etag({ mimeTypes }: EtagMiddlewareOptions): EtagMiddleware {
     const responseBodyHash = hash(responseBodyArrayBuffer);
     const ifNoneMatchRequestHeader = request.headers.get('If-None-Match');
 
-    console.log({ data: await new Response(response.body, response).text() });
-
-    console.log({ ifNoneMatchRequestHeader, responseBodyHash });
-
     if (responseBodyHash === ifNoneMatchRequestHeader) {
       // The user already has the right content in its browser cache, we don't send it again.
       return new Response(null, {
